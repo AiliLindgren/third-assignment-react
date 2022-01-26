@@ -1,6 +1,10 @@
-const Main = () => {
+const Main = ({ activateMargin }) => {
   return (
-    <div className="main" id="main">
+    <div
+      className="main"
+      id="main"
+      style={activateMargin ? { marginLeft: "250px" } : { marginLeft: "0px" }}
+    >
       <h1>Landing Page</h1>
       <p className="main-info">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

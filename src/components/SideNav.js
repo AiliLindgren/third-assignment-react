@@ -1,15 +1,19 @@
-const SideNav = () => {
-  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.getElementById("learn-more").style.marginLeft = "0";
-    document.getElementById("modal-btn").style.marginLeft = "0px";
-  }
+const SideNav = ({ openSideNav, isSideNav, isMargin }) => {
   return (
     <div className="container">
-      <div id="mySidenav" className="sidenav">
-        <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+      <div
+        id="mySidenav"
+        className="sidenav"
+        style={openSideNav ? { width: "250px" } : { width: "0px" }}
+      >
+        <a
+          href="#"
+          className="closebtn"
+          onClick={() => {
+            isSideNav(false);
+            isMargin(false);
+          }}
+        >
           &times;
         </a>
         <a href="#">About</a>

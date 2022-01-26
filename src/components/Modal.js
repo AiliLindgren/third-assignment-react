@@ -1,15 +1,11 @@
-const Modal = () => {
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
-
+const Modal = ({ openModal }) => {
   return (
-    <div id="myModal" className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={closeModal}>
+    <div className="modal__background" onClick={() => openModal(false)}>
+      <div className="modal__content">
+        <span className="modal__close" onClick={() => openModal(false)}>
           &times;
         </span>
-        <div className="container">
+        <div className="modal__form-container">
           <form action="action_page.php">
             <label for="fname">First Name</label>
             <input
@@ -43,20 +39,3 @@ const Modal = () => {
 };
 
 export default Modal;
-
-/* 
-
-
-            <label for="subject">Subject</label>
-            <textarea
-              id="subject"
-              name="subject"
-              placeholder="Write something.."
-              style="height: 200px"
-            ></textarea>
-            
-
-
-
-
- */
